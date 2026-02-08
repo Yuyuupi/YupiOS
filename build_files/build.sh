@@ -9,8 +9,6 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
 
 # Use a COPR Example:
 #
@@ -19,6 +17,9 @@ dnf5 install -y tmux
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
 
+dnf config-manager -y addrepo --from-repofile=https://download.opensuse.org/repositories/home:mkittler/Fedora_43/home:mkittler.repo
+dnf -y install syncthing syncthingctl-qt6 syncthingplasmoid-qt6 syncthingfileitemaction-qt6
+
 #### Example for enabling a System Unit File
 
-systemctl enable podman.socket
+# systemctl enable podman.socket
