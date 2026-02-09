@@ -1,0 +1,3 @@
+gamescope \
+    --mangoapp \
+    -e --prefer-output "DP-3,*"-- steam -steamdeck -steamos3
